@@ -7,6 +7,8 @@ import org.junit.jupiter.api.Test;
 import pages.CalendarComponent;
 import pages.TestPageDemoqa;
 
+import java.io.FilenameFilter;
+
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
@@ -53,21 +55,16 @@ public class TestDemoqaFormRegistration extends TestBase {
                 .setClick();
 
         testPageDemoqa.verifyModalWindow()
-                .verifyModalResults("Student Name", firstname +" "+ lastname)
+                .verifyModalResults("Student Name", firstname + " " + lastname)
                 .verifyModalResults("Student Email", email)
                 .verifyModalResults("Gender", gender)
                 .verifyModalResults("Mobile", mobile)
                 .verifyModalResults("Date of Birth", "20 March,2014")
                 .verifyModalResults("Subjects", subjects)
                 .verifyModalResults("Hobbies", hobby)
-//                .verifyModalResults("Picture", uploadPicture )
+                .verifyModalResults("Picture", "MistakeText.jpg")
                 .verifyModalResults("Address", currentAddress)
-                .verifyModalResults("State and City", choiseState +" "+choiseCity);
-
-
-
-
-
+                .verifyModalResults("State and City", choiseState + " " + choiseCity);
 
 
     }
