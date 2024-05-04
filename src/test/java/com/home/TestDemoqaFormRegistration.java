@@ -42,9 +42,10 @@ public class TestDemoqaFormRegistration extends TestBase {
                 .setHobby(hobby)
                 .setUploadPicture(uploadPicture)
                 .setAddress(currentAddress)
-                .setState(choiseState)
-                .setCity(choiseCity)
+                .setState(state)
+                .setCity(city)
                 .setClick();
+        System.out.println();
 
         testPageDemoqa.verifyModalWindow()
                 .verifyModalResults("Student Name", firstname + " " + lastname)
@@ -56,7 +57,7 @@ public class TestDemoqaFormRegistration extends TestBase {
                 .verifyModalResults("Hobbies", hobby)
                 .verifyModalResults("Picture", "MistakeText.jpg")
                 .verifyModalResults("Address", currentAddress)
-                .verifyModalResults("State and City", choiseState + " " + choiseCity);
+                .verifyModalResults("State and City", state + " " + city);
 
 
     }
