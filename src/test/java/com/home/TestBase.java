@@ -15,7 +15,11 @@ public class TestBase {
     public String email = faker.internet().emailAddress();
     public String gender = faker.demographic().sex();
     public String mobile = faker.phoneNumber().subscriberNumber(10);
-//    public String dateOfBirth = "20 March,1970";
+
+    public String day = String.valueOf(faker.number().numberBetween(1, 28));
+    public String month = faker.options().option("January", "February", "March", "April");
+    public String year = String.valueOf(faker.number().numberBetween(1990, 2014));
+
     public String subjects = faker.options().option("Maths","Accounting", "Arts");
     public String hobby = faker.options().option("Sports", "Reading", "Music");
     public String currentAddress = faker.address().streetAddress();

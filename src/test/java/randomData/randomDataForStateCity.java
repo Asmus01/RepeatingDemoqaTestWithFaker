@@ -16,12 +16,9 @@ public class randomDataForStateCity {
             city = faker.options().option("Karnal", "Panipat");
         } else if (state == "Rajasthan") {
             city = faker.options().option("Jaipur", "Jaiselmer");
-
         }
+
         return city;
-
     }
-
-
 }
 
