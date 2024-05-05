@@ -1,6 +1,8 @@
 package com.home;
 
 
+import com.codeborne.selenide.logevents.SelenideLogger;
+import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.Test;
 import pages.TestPageDemoqa;
 
@@ -30,6 +32,7 @@ public class TestDemoqaFormRegistration extends TestBase {
     @Test
     void demoqaRegistrationForm() {
 
+        SelenideLogger.addListener("allure", new AllureSelenide());
 
         testPageDemoqa.openPage()
                 .setFirstName(firstname)
@@ -52,7 +55,7 @@ public class TestDemoqaFormRegistration extends TestBase {
                 .verifyModalResults("Student Email", email)
                 .verifyModalResults("Gender", gender)
                 .verifyModalResults("Mobile", mobile)
-                .verifyModalResults("Date of Birth", day +" "+ month +","+ year )
+                .verifyModalResults("Date of Birth", day + " " + month + "," + year)
                 .verifyModalResults("Subjects", subjects)
                 .verifyModalResults("Hobbies", hobby)
                 .verifyModalResults("Picture", "MistakeText.jpg")
